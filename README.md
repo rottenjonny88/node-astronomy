@@ -9,7 +9,7 @@ This Javascript code is fronting as a Node module, but is really meant to be loa
 
 ### Installation
 
-	git clone https://github.com/TimeMagazine/node-astronomy.git
+	git clone https://github.com/rottenjonny88/node-astronomy.git
 	cd node-astronomy
 	npm install
 
