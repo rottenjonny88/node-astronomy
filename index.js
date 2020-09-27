@@ -44,6 +44,14 @@ module.exports = {
 				y: AU * (Math.sin(theta) * d.position.yecl + Math.cos(theta) * d.position.zecl)
 			}
 		});
+	},
+	
+		ecliptic: function(data, xp, yp, zp) {
+		var xecl = (cos(data.w) * cos(data.node) - sin(data.w) * sin(data.node) * cos(data.I)) * xp + (-sin(data.w) * cos(data.node) - cos(data.w) * sin(data.node) * cos(data.I)) * yp,
+		    yecl = (cos(data.w) * sin(data.node) + sin(data.w) * cos(data.node) * cos(data.I)) * xp + (-sin(data.w) * sin(data.node) + cos(data.w) * cos(data.node) * cos(data.I)) * yp,
+		    zecl = sin(data.w) * sin(data.I) * xp + cos(data.w) * sin(data.I) * yp;
+
+		return [xecl, yecl, -zecl];
 	}
 }
 
